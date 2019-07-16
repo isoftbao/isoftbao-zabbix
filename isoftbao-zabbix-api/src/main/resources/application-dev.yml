@@ -1,0 +1,13 @@
+debug: false
+logging:
+  path: /Users/Jenner/DEV/data/app/isoftbao/isoftbao-zabbix-api/logs
+  level:
+    root: info
+    com.isoftbao.zabbix: debug  
+  
+com:
+  isoftbao:
+    zabbix:
+      url: http://app.ushon.com/api_jsonrpc.php
+      username: Admin
+      password: zabbix

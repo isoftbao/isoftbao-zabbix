@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.isoftbao.zabbix.starter.autoconfigure.ZabbixDataAutoConfiguration

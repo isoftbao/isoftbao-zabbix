@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.isoftbao</groupId>
+		<artifactId>isoftbao-zabbix-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>com.isoftbao</groupId>
+	<artifactId>isoftbao-zabbix-api</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>isoftbao-zabbix-api</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<metrics.version>4.1.0</metrics.version>
+	</properties>
+	<dependencies>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.isoftbao</groupId>
+			<artifactId>isoftbao-zabbix-starter</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.dropwizard.metrics/metrics-core -->
+		<dependency>
+		    <groupId>io.dropwizard.metrics</groupId>
+		    <artifactId>metrics-core</artifactId>
+		    <version>${metrics.version}</version>
+		</dependency>
+		
+		<!-- Spring Boot生产级特性 -->
+		<!-- 端点endPoint 查看性能指标信息 /metrics路径 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!-- 汇总端点信息 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
+		</dependency>
+ 
+		<!-- actuator聚合图形化插件 访问地址 http://127.0.0.1:8080 -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-hal-browser</artifactId>
+		</dependency>
+		
+		<!-- <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency> -->
+		
+	</dependencies>
+	<build>
+		<plugins>
+			<!-- 添加spring-boot-maven-plugin插件 作用:该插件支持多种功能，常用的有两种，第一种是打包项目为可执行的jar包,另外 
+				一个命令就是mvn spring-boot:run，可以直接使用tomcat（默认）启动项目。 -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
